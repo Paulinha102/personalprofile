@@ -1,0 +1,38 @@
+// Cores 
+$cor-primaria: #595959;
+$cor-secundaria: #97c5dd;
+
+// Fontes
+$fonte-1: 'Open Sans', sans-serif;
+$fonte-2: 'Quicksand', sans-serif;
+
+//Tipografia
+@function em($pixel, $contexto: 16){
+    @return $pixel / $contexto + em;
+}
+@mixin tipo-1($size) {
+    font-family: $fonte-1;
+    @if $size == 16{
+        font-size: em(16);
+        line-height: em(30, 16);
+    }
+}
+
+@mixin tipo-2($size) {
+    font-family: $fonte-2;
+    @if $size == 16{
+        font-size: em(16);
+        line-height: em(30, 16);
+    }
+    @else if $size == 24{
+        font-size: em(24);
+        line-height: em(30, 24);
+    }
+}
+
+// shadow
+@mixin  box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -mox-box-shadow: $shadow;
+    box-shadow: $shadow;
+}

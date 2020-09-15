@@ -1,0 +1,148 @@
+// Reset
+
+*{padding: 0;margin: 0;}
+img{max-width: 100%;display: block;}
+a{text-decoration: none;}
+p,a{@include tipo-1(18);}
+li{list-style: none;}
+.container-grid, .container{
+    @include d(m){
+        padding: 0 20px;
+    }
+}
+
+// Header
+header{
+    padding:20px 0;
+    ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+    li + li{
+        margin-left: 30px;
+    }
+    li a{
+        cursor: pointer;
+        color: $cor-primaria;
+        font-weight: bold;
+        &:hover{
+            color: $cor-secundaria;
+        }
+    }
+    nav{
+        @include d(s){
+            display: none;
+        }
+    }
+}
+
+header.fixed{
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.25);
+    padding: 10px;
+}
+
+header .container-grid{
+    position: relative;
+}
+.btn-menu {
+    display: none;
+    @include d(s){
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: 36px;
+        height: 36px;
+        top: 0;
+        left: 0px;
+        cursor: pointer;
+    }
+}
+    
+  .btn-left {
+    background-color: $cor-primaria;
+    position: absolute;
+    height: 3px;
+    width: 15px;
+    top: 30px;
+    left: 0px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .btn-left:before {
+    background-color: $cor-primaria;
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    content: "";
+    top: -10px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .btn-left:after {
+    background-color: $cor-primaria;
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    content: "";
+    top: 10px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  
+  .btn-right {
+    background-color: $cor-primaria;
+    position: absolute;
+    height: 3px;
+    width: 15px;
+    top: 30px;
+    left: 15px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .btn-right:before {
+    background-color: $cor-primaria;
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    content: "";
+    top: -10px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  .btn-right:after {
+    background-color: $cor-primaria;
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    content: "";
+    top: 10px;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  
+  .active .btn-left {
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    background: transparent;
+  }
+  .active .btn-left:before {
+    -webkit-transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+    transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+  }
+  .active .btn-left:after {
+    -webkit-transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+    transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+  }
+  .active .btn-right {
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    background: transparent;
+  }
+  .active .btn-right:before {
+    -webkit-transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+    transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+  }
+  .active .btn-right:after {
+    -webkit-transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+    transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+  }
