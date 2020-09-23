@@ -1,0 +1,53 @@
+// Reset
+*{padding: 0;margin: 0;font-family: $fonte-1;}
+img{max-width: 100%;display: block;}
+a{text-decoration: none;}
+li{list-style: none;}
+p,a, label, input, span{@include tipo-1(16);}
+.container-grid, .container{
+    @include d(m){
+        padding: 0 20px;
+    }
+   
+    @include d(s){
+      max-width: 90%;
+    }
+    @include d(s2){
+      padding: 0 20px;
+    }
+}
+
+#home{
+    margin-top: 100px;
+    .photo{display: grid; justify-items: center;}
+    .photo img {
+        max-width: 300px;
+        border-radius: 50%;
+        @include box-shadow(0 0 0 8px $cor-secundaria, 0 0 0 12px $cor-primaria ) ;
+    }
+    .descri{
+        display: grid;
+        align-self: center;
+        color: $cor-primaria;
+        span{
+            color: #fff;
+            background: $cor-secundaria;
+            font-size: 14px;
+            width: 130px;
+            line-height: 24px;
+            padding: 8px 20px;
+            border-radius: 20px 20px 0 20px;
+        }
+        h2{
+            @include tipo-1(48);
+            margin-top: 10px;
+        }
+        h3{
+            @include tipo-1(24);
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+

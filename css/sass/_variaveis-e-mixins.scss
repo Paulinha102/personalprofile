@@ -1,32 +1,36 @@
 // Cores 
 $cor-primaria: #595959;
 $cor-secundaria: #97c5dd;
+$dark: #343a40;
 
 // Fontes
 $fonte-1: 'Open Sans', sans-serif;
-$fonte-2: 'Quicksand', sans-serif;
+
 
 //Tipografia
 @function em($pixel, $contexto: 16){
     @return $pixel / $contexto + em;
 }
 @mixin tipo-1($size) {
-    font-family: $fonte-1;
     @if $size == 16{
         font-size: em(16);
-        line-height: em(30, 16);
+        
     }
-}
-
-@mixin tipo-2($size) {
-    font-family: $fonte-2;
-    @if $size == 16{
-        font-size: em(16);
-        line-height: em(30, 16);
+    @else if $size == 18{
+        font-size: em(18);
+       
     }
     @else if $size == 24{
         font-size: em(24);
-        line-height: em(30, 24);
+       
+    }
+    @else if $size == 36{
+        font-size: em(36);
+      
+    }
+    @else if $size == 48{
+        font-size: em(48);
+       
     }
 }
 
