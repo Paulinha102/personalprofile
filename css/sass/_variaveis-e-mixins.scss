@@ -1,11 +1,10 @@
 // Cores 
-$cor-primaria: #595959;
-$cor-secundaria: #97c5dd;
-$dark: #343a40;
+$cor-primaria: #282828;
+$cor-secundaria: #58BBF3;
 
 // Fontes
-$fonte-1: 'Open Sans', sans-serif;
-
+$fonte-1: 'Roboto', sans-serif;
+$fonte-2: 'Montserrat', sans-serif;
 
 //Tipografia
 @function em($pixel, $contexto: 16){
@@ -14,23 +13,17 @@ $fonte-1: 'Open Sans', sans-serif;
 @mixin tipo-1($size) {
     @if $size == 16{
         font-size: em(16);
-        
     }
-    @else if $size == 18{
-        font-size: em(18);
+    @else if $size == 56{
+        font-size: em(56);
        
     }
-    @else if $size == 24{
-        font-size: em(24);
-       
-    }
-    @else if $size == 36{
-        font-size: em(36);
-      
-    }
-    @else if $size == 48{
+}
+
+@mixin title($size) {
+    font-family: $fonte-2;
+    @if $size == 48{
         font-size: em(48);
-       
     }
 }
 
