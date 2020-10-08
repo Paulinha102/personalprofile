@@ -1,5 +1,6 @@
 header{
-    padding:10px 0;
+    padding:15px 0;
+    z-index: 20000;
     transition: .2s ease-in-out;
     box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.1);
     .container-grid{
@@ -15,20 +16,6 @@ header{
         }
     }
 
-    .fixed{
-        @include box-shadow(5px 5px 15px 0px rgba(44,44,44,0.25) );
-        padding: 15px 0;
-        position: fixed;
-        width: 100%;
-        .logo{
-            max-width: 200px;
-            @include d(s){
-                max-width: 100px;
-            }
-        }
-
-
-    }
     .logo{
         max-width: 200px;
         @include d(s2){
@@ -44,6 +31,19 @@ header{
         padding-bottom: 20px;
     }
 
+}
+header.fixed{
+    @include box-shadow(5px 5px 15px 0px rgba(44,44,44,0.25) );
+    padding: 5px 0;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    .logo{
+        max-width: 200px;
+        @include d(s){
+            max-width: 100px;
+        }
+    }
 }
 
 nav{
@@ -67,6 +67,7 @@ nav{
     li a{
         cursor: pointer;
         color: $cor-primaria;
+        font-weight: 500;
         &:hover{
             color: $cor-secundaria;
         }

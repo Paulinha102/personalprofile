@@ -14,9 +14,11 @@ $fonte-2: 'Montserrat', sans-serif;
     @if $size == 16{
         font-size: em(16);
     }
+    @else if $size == 22{
+        font-size: em(22);
+    }
     @else if $size == 56{
         font-size: em(56);
-       
     }
 }
 
