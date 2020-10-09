@@ -19,13 +19,68 @@ p{font-weight: 300;}
 }
 
 #home{
-    padding: 120px 0;
     position: relative;
-    overflow: hidden;
-    .photo{display: grid; justify-items: center;}
+    overflow: hidden; 
+    display: flex;
+    height: 90vh;
+   @include d(m){
+       height: auto;
+       padding: 80px 0;
+   }
+   @include d(s2){
+        height: auto;
+        padding: 60px 0;
+    }
+    @include d(s){
+        height: auto;
+        padding: 60px 0;
+    }
+    .wrapper{
+        align-self: center;
+        width: 100%;
+    }
+    .photo{
+        display: grid;
+        justify-items: center;
+        
+        @include d(s){
+            order: 1;
+        }
+    }
+    .container{
+        @include d(s){
+            display: grid;
+            justify-content: center;
+        }
+    }
+    .grid-6:first-child{
+        @include d(s2){
+            width: 70%;
+        }
+        @include d(m){
+            width: 60%;
+        }
+    }
+    .grid-6:last-child{
+        @include d(s2){
+            width: 30%;
+        }
+        @include d(m){
+            width: 25%;
+        }
+    }
     .photo img {
         max-width: 400px;
         z-index: 5;
+        @include d(m){
+            max-width: 250px;
+        }
+        @include d(s2){
+            max-width: 200px;
+        }
+        @include d(s){
+            max-width: 220px;
+        }
     }
     .descri{
         z-index: 3;
@@ -44,6 +99,9 @@ p{font-weight: 300;}
         h2{
             @include tipo-1(56);
             margin-top: 10px;
+            @include d(s){
+                @include tipo-1(48);
+            }
         }
         h3{
             @include tipo-1(22);
@@ -60,30 +118,73 @@ p{font-weight: 300;}
             display: grid;
             grid-template-columns: repeat(4, 40px);
             gap: 20px;
+            @include d(s){
+                margin-top: 30px;
+            }
         }
         .social-icons img{
             max-width: 32px;
         }
+        
+        @include d(s){
+            margin-top: 30px;
+            order: 2;
+        }
+
 
     }
-    .bg-intro{
-        position: absolute;
-        top: 0;
-        z-index: 2;
-        overflow: hidden;
+    // .bg-intro{
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 2;
+    //     overflow: hidden;
         
-    }
+    // }
     svg{
         position: absolute;
-        bottom: -78px;
-        margin-bottom: 78px;
         background: #fff;
+        bottom: 0;
+
     }
 
 }
 
+.title{
+    @include title(36);
+    font-weight: 500;
+    display: inline-block;
+   margin-bottom: 30px;
+    &::after{
+        content: '';
+        width: 60px;
+        height: 3px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        background: $cor-secundaria;
+    }
+}
+
 #sobre{
-    
+    padding: 60px;
+    img{
+        max-width: 450px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+    span{
+        font-weight: 300;
+        @include tipo-1(14);
+        color: $cor-primaria;
+        border: 1px solid $cor-secundaria;
+        padding: 2px 4 px;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+    span + span{
+        margin-right: 5px;
+    }
 }
 
 

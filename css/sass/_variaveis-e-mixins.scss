@@ -11,11 +11,17 @@ $fonte-2: 'Montserrat', sans-serif;
     @return $pixel / $contexto + em;
 }
 @mixin tipo-1($size) {
-    @if $size == 16{
+    @if $size == 14{
+        font-size: em(14);
+    }
+    @else if $size == 16{
         font-size: em(16);
     }
     @else if $size == 22{
         font-size: em(22);
+    }
+    @else if $size == 48{
+        font-size: em(48);
     }
     @else if $size == 56{
         font-size: em(56);
@@ -24,8 +30,8 @@ $fonte-2: 'Montserrat', sans-serif;
 
 @mixin title($size) {
     font-family: $fonte-2;
-    @if $size == 48{
-        font-size: em(48);
+    @if $size == 36{
+        font-size: em(36);
     }
 }
 
