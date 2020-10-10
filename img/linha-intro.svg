@@ -1,5 +1,15 @@
-<svg width="1920" height="79" viewBox="0 0 1920 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="0.000102471" y1="1" x2="1037.99" y2="1.10636" stroke="#58BBF3" stroke-opacity="0.75" stroke-width="2"/>
-<line x1="1037.56" y1="1.16906" x2="1152.56" y2="78.1691" stroke="#58BBF3" stroke-opacity="0.75" stroke-width="2"/>
-<line x1="1152" y1="78" x2="1920" y2="78" stroke="#58BBF3" stroke-opacity="0.75" stroke-width="2"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 79" style="enable-background:new 0 0 1920 79;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#58BBF3;stroke-width:2;stroke-opacity:0.75;}
+</style>
+<g>
+	<polygon class="st0" points="0,1 1037.6,1.2 1152,78 0,79 	"/>
+	<line class="st1" x1="0" y1="1" x2="1038" y2="1.1"/>
+	<line class="st1" x1="1037.6" y1="1.2" x2="1152.6" y2="78.2"/>
+	<line class="st1" x1="1152" y1="78" x2="1920" y2="78"/>
+</g>
 </svg>

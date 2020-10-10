@@ -2,8 +2,8 @@
 $cols: 12;
 $gutter: 20px;
 $l-device: 1170px;
-$m-device: 760px;
-$s-device: 599px;
+$m-device: 800px;
+$s-device: 600px;
 
 .container-grid{max-width: $l-device;margin: 0 auto;}
 
@@ -73,58 +73,20 @@ $s-device: 599px;
     @include grid-structure;
 }
 
-// Gera as classes de offset
-@for $i from 1 through $cols {
-    .offset-#{$i} {
-        margin-left: grid($i,offset);
-        @extend %offset;
-    }
-}
-@include d(s){
-    %offset{
-        margin-left: 0px;
-    }
-}
-
-// Mixin clearfix
-@mixin clearfix {
-    &::after, &::before{
-        content: '';
-        display: table;
-        clear: both;
-    }
-}
 @mixin container {
     max-width: $l-device;
     margin: 0 auto;
     display: flex;
     position: relative;
-    @include d(m){
-        max-width: $m-device;
-    }
     @include d(s){
-        max-width: 90%;
+        width: 90%;
+        display: grid;
         padding-left: 10px;
         padding-right: 10px;
     }
-
-    @include clearfix;
 }
 
 .container{
     @include container;
 }
-@mixin row {
-    margin-right: - $gutter / 2;
-    margin-left: - $gutter / 2;
-    position: relative;
-    @include d(s){
-        margin-left: 0;
-        margin-right: 0;
-        @include clearfix;
-    }
-}
 
-.row{
-    @include row;
-}

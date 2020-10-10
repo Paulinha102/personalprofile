@@ -1,5 +1,6 @@
 // Reset
 *{padding: 0;margin: 0;font-family: $fonte-1;color: $cor-primaria;}
+body{background: #fff;}
 img{max-width: 100%;display: block;}
 a{text-decoration: none;}
 li{list-style: none;}
@@ -9,20 +10,21 @@ p{font-weight: 300;}
     @include d(m){
         padding: 0 20px;
     }
-   
-    @include d(s){
-      max-width: 90%;
-    }
     @include d(s2){
       padding: 0 20px;
+    }
+}
+.container-grid{
+    @include d(s){
+        padding: 0 10px;
     }
 }
 
 #home{
     position: relative;
-    overflow: hidden; 
     display: flex;
-    height: 90vh;
+    height: 95vh;
+    overflow: hidden;
    @include d(m){
        height: auto;
        padding: 80px 0;
@@ -46,6 +48,7 @@ p{font-weight: 300;}
         @include d(s){
             order: 1;
         }
+        
     }
     .container{
         @include d(s){
@@ -72,15 +75,19 @@ p{font-weight: 300;}
     .photo img {
         max-width: 400px;
         z-index: 5;
+        @include d(l){
+            max-width: 60%;
+        }
         @include d(m){
-            max-width: 250px;
+            max-width: 100%;
         }
         @include d(s2){
-            max-width: 200px;
+            max-width: 100%;
         }
         @include d(s){
-            max-width: 220px;
+            max-width: 50%;
         }
+        
     }
     .descri{
         z-index: 3;
@@ -95,6 +102,10 @@ p{font-weight: 300;}
             line-height: 24px;
             padding: 8px 20px;
             border-radius: 20px 20px 0 20px;
+            @include d(s){
+                justify-self: flex-start;
+                margin-left: 60px;
+            }
         }
         h2{
             @include tipo-1(56);
@@ -124,51 +135,79 @@ p{font-weight: 300;}
         }
         .social-icons img{
             max-width: 32px;
+            @include d(s){
+                max-width: 25px;
+            }
         }
         
         @include d(s){
             margin-top: 30px;
             order: 2;
+            justify-items: center;
         }
 
 
     }
-    // .bg-intro{
-    //     position: absolute;
-    //     top: 0;
-    //     z-index: 2;
-    //     overflow: hidden;
-        
-    // }
     svg{
         position: absolute;
-        background: #fff;
         bottom: 0;
-
     }
-
+    .bg-intro{
+        position: absolute;
+        @include d(s){
+            display: none;
+        }
+    }
 }
 
 .title{
     @include title(36);
     font-weight: 500;
     display: inline-block;
-   margin-bottom: 30px;
+    margin-bottom: 30px;
     &::after{
         content: '';
         width: 60px;
         height: 3px;
         display: block;
         text-align: center;
-        margin: 0 auto;
+        margin: 10px  auto 0 auto;
         background: $cor-secundaria;
     }
 }
 
 #sobre{
-    padding: 60px;
-    img{
-        max-width: 450px;
+   .sobre{
+    padding: 80px 0;
+    .container{
+        @include d(s2){
+           display: flex;
+        }
+    }
+    .grid-6{
+        @include d(s){
+            display: grid;
+            justify-items: center;
+        }
+    }
+    .grid-6:first-child{
+        @include d(s2){
+            width: 40%;
+        }
+        img{
+            max-width: 75%;
+            @include d(s){
+                max-width: 100%;
+            }
+            @include d(s2){
+                max-width: 100%;
+            }
+        }
+    }
+    .grid-6:last-child{
+        @include d(s2){
+            width: 60%;
+        }
     }
     p{
         margin-bottom: 20px;
@@ -178,12 +217,64 @@ p{font-weight: 300;}
         @include tipo-1(14);
         color: $cor-primaria;
         border: 1px solid $cor-secundaria;
-        padding: 2px 4 px;
+        padding: 3px 5px;
+        border-radius: 4px;
         display: inline-block;
         margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
     }
-    span + span{
-        margin-right: 5px;
+ 
+    button{
+        border: none;
+        border-radius: 25px;
+        background: $cor-secundaria;
+        padding: 12px 20px;
+        @include tipo-1(16);
+        cursor: pointer;
+        color: #fff;
+        margin-top: 80px;
+        transition: .3s linear;
+        // &:after{
+        //     content: url(../../img/flecha.png);
+        //     margin-left: 5px;
+        // }
+        &:hover{
+            background: $cor-primaria;
+        }
+
+    }
+   }
+
+   .services{
+         background-color: lighten(#C4C4C4, 12%); 
+        .container-grid{
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 40px;
+        }
+        
+         &:before{
+             content: '';
+             display: block;
+             margin: 0 auto;
+             width: 40px;
+             height: 40px;
+             border-top: 40px solid #fff;
+             border-left: 40px solid transparent;
+             border-right: 40px solid transparent;
+
+         }
+        .title{
+            text-align: center;
+            grid-column: 1/3;
+        }
+        .item{
+            background: #fff;
+            padding: 40px;
+        }
+        h2{font-weight: 500;}
+
     }
 }
 
