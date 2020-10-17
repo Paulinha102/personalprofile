@@ -5,6 +5,8 @@ header{
     box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.1);
     .container-grid{
         position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;

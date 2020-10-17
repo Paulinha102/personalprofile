@@ -1,11 +1,10 @@
 // Variaveis do grid
-$cols: 12;
 $gutter: 20px;
 $l-device: 1170px;
 $m-device: 800px;
 $s-device: 600px;
 
-.container-grid{max-width: $l-device;margin: 0 auto;}
+.container-grid{max-width: $l-device;margin: 0 auto;display: grid;}
 
 // Box-Sizing
 *, *::after, *::before{
@@ -37,27 +36,8 @@ $s-device: 600px;
     }
 }
 
-// Função do Grid 
-@function grid($col, $offset: false){
-    $width: $col / $cols * 100 + "%";
-    $result: calc(#{$width} - #{$gutter});
-    @if $offset == offset {
-        $gutter: $gutter / 2;
-        $result: calc(#{$width} - #{$gutter});
-    }
-    @return $result;
-}
-
-// Gerar classe de grid
-@for $i from 1 through $cols{
-    .grid-#{$i} {
-        width: grid($i);
-    }
-}
-
-// Mixin estrutura do grid 
-@mixin grid-structure {
-    // float: left;
+.grid-6 {
+    width: calc(50% - 20px);
     min-height: 1px;
     margin-left: $gutter / 2;
     margin-right: $gutter / 2;
@@ -67,10 +47,6 @@ $s-device: 600px;
         margin-left: 0;
         margin-right:0;
     }
-}
-
-[class^="grid-"]{
-    @include grid-structure;
 }
 
 @mixin container {
