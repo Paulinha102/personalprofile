@@ -41,7 +41,7 @@ header{
     
 }
 header.fixed{
-    @include box-shadow(5px 5px 15px 0px rgba(44,44,44,0.25) );
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.25);
     padding: 5px 0;
     position: fixed;
     top: 0;

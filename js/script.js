@@ -1,7 +1,6 @@
 function initMenu(){
     const btMenu = document.querySelector('header .btn-menu');
     const navMenu = document.querySelector('header nav');
-    console.log(btMenu);
 
     btMenu.addEventListener('click', function(){
         btMenu.classList.toggle('active');
@@ -25,19 +24,20 @@ function initMenu(){
 }
 initMenu();
 
-
 function initScrollSuave(){
-    const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+    const linksInternos = document.querySelectorAll('nav a[href^="#"]');
 
     function scrollToSection(e){
-        event.preventDefault();
+        e.preventDefault();
         const href = e.currentTarget.getAttribute('href'); 
         const section = document.querySelector(href);
-        height = section.offsetTop; 
+        const menu = document.querySelector('header');
+        const menuHeight = menu.clientHeight; 
 
-        section.scrollIntoView({
+        const topo = section.offsetTop - menuHeight;
+        window.scrollTo({
+            top: topo,
             behavior: 'smooth',
-            block: 'start',
         });
     }
 
@@ -45,41 +45,65 @@ function initScrollSuave(){
         link.addEventListener('click', scrollToSection);
     });
 }
-//initScrollSuave();
+initScrollSuave();
 
-function initBarGraph(){
-    (function($) {
-        function generateBarGraph(wrapper) {
-          // Set Up Values Array
-          var values = [];
-      
-          // Get Values and save to Array
-          $(wrapper + ' .bar').each(function(index, el) {
-            values.push($(this).data('value'));
-          });
-      
-          // Get Max Value From Array
-          var max_value = Math.max.apply(Math, values);
-      
-          // Set width of bar to percent of max value
-          $(wrapper + ' .bar').each(function(index, el) {
-            var bar = $(this),
-                value = bar.data('value'),
-                percent = Math.ceil((value / max_value) * 100);
-      
-            // Set Width & Add Class
-            bar.width(percent + '%');
-            bar.addClass('in');
-          });
-        }
-      
-        // Generate the bar graph on window load...
-        $(window).on('load', function(event) {
-          generateBarGraph('#dashboard-stats');
+function initMenuActive(){
+    const section = document.querySelectorAll('section');
+    section.forEach((item) => {
+        let height = item.clientHeight;
+        const offsetTop = item.offsetTop;
+        const menu = document.querySelector('header');
+        const menuHeight = menu.clientHeight; 
+        const id = item.getAttribute('id');
+        const itemMenu = document.querySelector('nav a[href="#' + id + '"]');
+        
+        window.addEventListener('scroll', function(){
+            const scrollTop = window.scrollY;
+            if(offsetTop - menuHeight*2 < scrollTop  && offsetTop + height - menuHeight*2 > scrollTop) {
+                itemMenu.classList.add('active');
+            }
+            else if(window.scrollY <= menuHeight){
+                
+            }
+            else {
+                itemMenu.classList.remove('active');
+            }
         });
-      })(jQuery); // Fully reference jQuery after this point.
+    });
 }
-initBarGraph();
+initMenuActive();
 
 
+function initItensHidden(){
+    const btMore = document.querySelectorAll('.btn-more');
+    const btHidden = document.querySelectorAll('.btn-hidden');
+    const itensOcultos = document.querySelectorAll('.hidden');
+    if(btMore){
+        btMore.forEach((button) => {
+            button.addEventListener('click', function(){
+                itensOcultos.forEach((item) =>{
+                    item.classList.remove('hidden');
+                    item.classList.add('visible');
+                });
+                this.classList.add('desabilitar');
+            });
+        });
+    }
 
+    if(btHidden){
+        btHidden.forEach((button) => {
+            button.addEventListener('click', function(){
+                const itensVisiveis = document.querySelectorAll('.visible');
+                itensVisiveis.forEach((item) =>{
+                    item.classList.add('hidden');
+                    item.classList.remove('visible');
+                });
+                this.classList.toggle('desabilitar');
+                
+            });
+        });
+    };
+    
+}
+
+initItensHidden();

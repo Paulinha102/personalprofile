@@ -30,14 +30,8 @@ $fonte-2: 'Montserrat', sans-serif;
 
 @mixin title($size) {
     font-family: $fonte-2;
-    @if $size == 36{
-        font-size: em(36);
+    @if $size == 32{
+        font-size: em(32);
     }
 }
 
-// shadow
-@mixin  box-shadow($shadow...) {
-    -webkit-box-shadow: $shadow;
-    -mox-box-shadow: $shadow;
-    box-shadow: $shadow;
-}

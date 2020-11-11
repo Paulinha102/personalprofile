@@ -117,8 +117,7 @@ header .logo {
 
 header.fixed {
   -webkit-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.25);
-  -mox-box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.25);
-  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.25);
+          box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.25);
   padding: 5px 0;
   position: fixed;
   top: 0;
@@ -575,7 +574,7 @@ p {
 
 .title {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.25em;
+  font-size: 2em;
   font-weight: 500;
   display: inline-block;
   margin-bottom: 30px;
@@ -683,12 +682,12 @@ p {
 
 #sobre .services .container-grid {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 20px;
 }
 
 @media screen and (max-width: 599px) {
@@ -738,31 +737,8 @@ p {
   }
 }
 
-#sobre .services .item {
-  background: #fff;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  gap: 20px;
-  padding: 40px;
-  -webkit-box-shadow: 2px 7px 20px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 2px 7px 20px 2px rgba(0, 0, 0, 0.1);
-}
-
-#sobre .services .item p {
-  margin: 20px 0;
-}
-
-#sobre .services .item ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#sobre .services .item ul li {
-  margin-right: 10px;
-  max-width: 40px;
+#sobre .services h2 {
+  font-weight: 500;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1169px) {
@@ -774,11 +750,179 @@ p {
   }
 }
 
-#sobre .services h2 {
-  font-weight: 500;
+.item {
+  background: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 20px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  padding: 40px;
+  -webkit-box-shadow: 2px 7px 20px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 7px 20px 2px rgba(0, 0, 0, 0.2);
 }
 
-#habilidades:before {
+.item p {
+  margin: 20px 0;
+}
+
+.item ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.item ul li {
+  margin-right: 10px;
+  max-width: 40px;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  justify-self: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  color: #58BBF3;
+  border: 1px solid #58BBF3;
+  padding: 6px 20px;
+  outline: #282828;
+  cursor: pointer;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+.btn:hover {
+  background: #58BBF3;
+  color: #fff;
+}
+
+/*
+#habilidades{
+    &:before{
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 40px;
+        position: relative;
+        height: 40px;
+        border-top: 40px solid rgba(196, 196, 196, 0.18);
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+    }
+    .container-grid{
+        padding-top: 60px;
+        padding-bottom: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        @include d(s){
+            grid-template-columns: 1fr;
+        }
+        @include d(s2){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .title{text-align: center;display: block;margin-bottom: 80px;}
+    .item{
+        box-shadow: none;
+        grid-template-columns: 1fr;
+        span, p{
+            font-weight: 500;
+        }
+    }
+    .tec{
+        
+        .content {
+            max-width: 100%;
+            position: relative;
+            display: grid;
+            justify-content: stretch;
+            grid-template-columns: 1fr 5fr;
+            background-color: #878787;
+            margin-bottom: 50px;
+            height: 5px;
+            @include d(m){
+                grid-template-columns: 2fr 5fr;
+            }
+          }
+          .content p{
+            background: #fff;
+            position: relative;
+            top: -5px;
+          }
+          .skills {
+            text-align: right;
+            height: 5px;
+            color: white;
+            
+          }
+          .content span{
+            position: absolute;
+            right: 0;
+            top: -7px;
+            padding-left: 10px;
+            background: #fff;
+          }
+          .html, .css, .jav, .php{
+              background-color: $cor-secundaria;
+          }
+          .html {width: 90%;}
+          .css {width: 80%;}
+          .jav {width: 65%; }
+          .php {width: 60%; }
+         
+    }
+    
+    .prof{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        text-align: center;
+        justify-content: stretch;
+        gap: 60px 0;
+        // @include d(s){
+        //     gap: 60px 0;
+        // }
+        .skills, .content{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: relative;
+            background: none;
+            animation: .5s linear;
+            border: 5px solid #878787;
+        }
+        .skills{
+            border-color: $cor-secundaria transparent $cor-secundaria $cor-secundaria;
+            position: absolute;
+            top: -5px;
+            
+            left: -5px;
+        }
+        span{
+            position: absolute;
+            top: 45px;
+            left: 45px;
+            color: $cor-primaria;
+            text-align: center;
+        }
+        p{
+            position: relative;
+            bottom: -130px;
+        }
+    }
+}
+*/
+#formacao:before {
   content: '';
   display: block;
   margin: 0 auto;
@@ -790,137 +934,99 @@ p {
   border-right: 40px solid transparent;
 }
 
-#habilidades .container-grid {
+#formacao .container {
   padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  #formacao .container {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  #formacao .container .grid-6 {
+    width: calc(100% - 20px);
+  }
+}
+
+#formacao .title {
+  text-align: center;
+  display: block;
+  margin-bottom: 80px;
+}
+
+#formacao .item {
+  margin-bottom: 40px;
+}
+
+#formacao h4 {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+#formacao span {
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+#formacao span em, #formacao span a {
+  color: #58BBF3;
+  font-style: normal;
+}
+
+#formacao .cursos {
+  padding-top: 80px;
   padding-bottom: 60px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+#formacao .cursos .title {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
 }
 
 @media screen and (max-width: 599px) {
-  #habilidades .container-grid {
+  #formacao .cursos .title {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  #formacao .cursos .title {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #formacao .cursos {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 799px) {
-  #habilidades .container-grid {
+  #formacao .cursos {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
 }
 
-#habilidades .title {
-  text-align: center;
-  display: block;
-  margin-bottom: 80px;
-}
-
-#habilidades .item span, #habilidades .item p {
-  font-weight: 500;
-}
-
-#habilidades .tec .content {
-  max-width: 100%;
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  -ms-grid-columns: 1fr 5fr;
-      grid-template-columns: 1fr 5fr;
-  background-color: #878787;
-  margin-bottom: 50px;
-  height: 5px;
-}
-
-@media screen and (min-width: 800px) and (max-width: 1169px) {
-  #habilidades .tec .content {
-    -ms-grid-columns: 2fr 5fr;
-        grid-template-columns: 2fr 5fr;
-  }
-}
-
-#habilidades .tec .content p {
-  background: #fff;
-  position: relative;
-  top: -5px;
-}
-
-#habilidades .tec .skills {
-  text-align: right;
-  height: 5px;
-  color: white;
-}
-
-#habilidades .tec .content span {
-  position: absolute;
-  right: 0;
-  top: -7px;
-  padding-left: 10px;
-  background: #fff;
-}
-
-#habilidades .tec .html, #habilidades .tec .css, #habilidades .tec .jav, #habilidades .tec .php {
-  background-color: #58BBF3;
-}
-
-#habilidades .tec .html {
-  width: 90%;
-}
-
-#habilidades .tec .css {
-  width: 80%;
-}
-
-#habilidades .tec .jav {
-  width: 65%;
-}
-
-#habilidades .tec .php {
-  width: 60%;
-}
-
-#habilidades .prof {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  text-align: center;
-  gap: 60px 0;
-}
-
-#habilidades .prof .skills, #habilidades .prof .content {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  position: relative;
-  background: none;
-  border: 5px solid #878787;
-}
-
-#habilidades .prof .skills {
-  border-color: #58BBF3 transparent #58BBF3 #58BBF3;
-  position: absolute;
-  top: -5px;
-  left: -5px;
-}
-
-#habilidades .prof span {
-  position: absolute;
-  top: 45px;
-  left: 45px;
-  color: #282828;
-  text-align: center;
-}
-
-#habilidades .prof p {
-  position: relative;
-  bottom: -130px;
+.item.hidden, .btn-hidden {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  padding: 0;
 }
