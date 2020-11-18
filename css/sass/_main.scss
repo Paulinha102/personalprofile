@@ -6,6 +6,7 @@ a{text-decoration: none;}
 li{list-style: none;}
 p,a, label, input, span{@include tipo-1(16);}
 p{font-weight: 300;}
+button{outline: none;}
 
 .container-grid, .container{
     @include d(m){
@@ -224,7 +225,7 @@ p{font-weight: 300;}
         margin-right: 0.5rem;
     }
  
-    button{
+    .bt-down{
         border: none;
         border-radius: 25px;
         background: $cor-secundaria;
@@ -498,9 +499,10 @@ p{font-weight: 300;}
         font-size: 24px;
     }
     span{
-        font-weight: bold;
+        font-weight: 700;
         display: inline-block;
-        font-size: 18px;
+        font-size: em(18);
+        line-height: 30px;
         em, a{
             color: $cor-secundaria;
             font-style: normal;
@@ -508,6 +510,13 @@ p{font-weight: 300;}
     }
 
     .cursos{
+        .btn{
+            background: #fff;
+            font-size: em(28);
+            &:hover{
+                background: $cor-secundaria;
+            }
+        }
         .title{
             grid-column: 1/3;
             @include d(s){
@@ -531,14 +540,41 @@ p{font-weight: 300;}
     }
 }
 
-.item.hidden, .desabilitar {
-    height: 0;
-    width: 0;
-    overflow: hidden;
-    padding: 0;
+#portfolio{
+    padding: 60px 0;
+    .btn{
+        grid-column: 1/4;
+    }
+    .container-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+    .item{
+        height: 350px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .item:nth-child(3n + 2) {
+        position: relative;
+        top: -60px;
+    }
+
 }
 
+.item.hidden, .desabilitar {
+	transform: scale( 0 );
+	transition: all 500ms linear;
+    display: none;
+}
 
+.item.hidden.visible {
+    transform: scale(1);
+    height: auto;
+}
 
 
 
