@@ -117,5 +117,19 @@ document.addEventListener( "DOMContentLoaded", function() {
     }
     initItensHidden();
 
+    function initScrolltop(){
+        const btScroll = document.querySelector('.b-scroll');
+        function scrollToTop(e){
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        }
+        btScroll.addEventListener('click', scrollToTop);
+        
+    }
+    initScrolltop();
+
 
 });

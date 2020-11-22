@@ -118,6 +118,7 @@ button{outline: none;}
         h3{
             @include tipo-1(22);
             font-weight: 500;
+            line-height: 40px;
             margin-bottom: 10px;
         }
         .mail{
@@ -228,16 +229,19 @@ button{outline: none;}
     .bt-down{
         border: none;
         border-radius: 25px;
+        display: inline-block;
         background: $cor-secundaria;
         padding: 12px 20px;
         @include tipo-1(16);
         cursor: pointer;
         color: #fff;
+        
         margin-top: 80px;
         transition: .3s linear;
-        &:after{
-            content: url(../../img/flecha.png);
-            margin-left: 5px;
+        img{
+            float: right;
+            margin-top: 2px;
+            margin-left: 8px;
         }
         &:hover{
             background: $cor-primaria;
@@ -343,124 +347,6 @@ button{outline: none;}
 
 
 }
-/*
-#habilidades{
-    &:before{
-        content: '';
-        display: block;
-        margin: 0 auto;
-        width: 40px;
-        position: relative;
-        height: 40px;
-        border-top: 40px solid rgba(196, 196, 196, 0.18);
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-    }
-    .container-grid{
-        padding-top: 60px;
-        padding-bottom: 60px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        @include d(s){
-            grid-template-columns: 1fr;
-        }
-        @include d(s2){
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .title{text-align: center;display: block;margin-bottom: 80px;}
-    .item{
-        box-shadow: none;
-        grid-template-columns: 1fr;
-        span, p{
-            font-weight: 500;
-        }
-    }
-    .tec{
-        
-        .content {
-            max-width: 100%;
-            position: relative;
-            display: grid;
-            justify-content: stretch;
-            grid-template-columns: 1fr 5fr;
-            background-color: #878787;
-            margin-bottom: 50px;
-            height: 5px;
-            @include d(m){
-                grid-template-columns: 2fr 5fr;
-            }
-          }
-          .content p{
-            background: #fff;
-            position: relative;
-            top: -5px;
-          }
-          .skills {
-            text-align: right;
-            height: 5px;
-            color: white;
-            
-          }
-          .content span{
-            position: absolute;
-            right: 0;
-            top: -7px;
-            padding-left: 10px;
-            background: #fff;
-          }
-          .html, .css, .jav, .php{
-              background-color: $cor-secundaria;
-          }
-          .html {width: 90%;}
-          .css {width: 80%;}
-          .jav {width: 65%; }
-          .php {width: 60%; }
-         
-    }
-    
-    .prof{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        text-align: center;
-        justify-content: stretch;
-        gap: 60px 0;
-        // @include d(s){
-        //     gap: 60px 0;
-        // }
-        .skills, .content{
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            position: relative;
-            background: none;
-            animation: .5s linear;
-            border: 5px solid #878787;
-        }
-        .skills{
-            border-color: $cor-secundaria transparent $cor-secundaria $cor-secundaria;
-            position: absolute;
-            top: -5px;
-            
-            left: -5px;
-        }
-        span{
-            position: absolute;
-            top: 45px;
-            left: 45px;
-            color: $cor-primaria;
-            text-align: center;
-        }
-        p{
-            position: relative;
-            bottom: -130px;
-        }
-    }
-}
-*/
 
 #formacao{
     &:before{
@@ -556,7 +442,7 @@ button{outline: none;}
     }
     .btn{
         grid-column: 1/4;
-        margin-top: 30px;
+        margin-top: 10px;
     }
     .container-grid{
         display: grid;
@@ -570,7 +456,7 @@ button{outline: none;}
             grid-template-columns: 1fr;
         }
     }
-    .item.hidden{height: 0;}
+    .item.hidden{height: 0;padding: 0;}
     .item, .item.hidden.visible{
         height: 350px;
         display: flex;
@@ -606,6 +492,7 @@ button{outline: none;}
 	transform: scale( 0 );
 	transition: all 500ms linear;
     display: none;
+    
 }
 
 .item.hidden.visible {
@@ -623,7 +510,52 @@ button{outline: none;}
 }
 
 #contato{
-    
+    padding: 60px 0;
+    .title{text-align: center;margin-bottom: 60px;}
+    p{
+        font-size: em(20);
+        text-align: center;
+        font-weight: 400;
+        line-height: 40px;
+        display: flex;
+        justify-content: center;
+        img{
+            filter: invert(100%);
+            width: 14px;
+            position: relative;
+            height: 14px;
+            bottom: -15px;
+            margin: 0 10px;
+            transform: rotate(-90deg);
+        }
+    }
+    a{
+        color: $cor-secundaria;
+    }
+    .social-icons{
+        margin-top: 40px;
+        a{line-height: 36px;font-weight: 400;}
+        display: flex;
+        justify-content: center;
+
+        li + li{
+            margin-left: 100px;
+            @include d(s){
+                margin-left: 0px;
+                margin-top: 20px;
+            }
+        }
+        
+        img{
+            max-height: 38px;
+            float: left;
+            margin-right: 8px;
+        }
+        @include d(s){
+            flex-direction: column;
+            justify-self: center;
+        }
+    }
 }
 
 

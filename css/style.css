@@ -512,6 +512,7 @@ button {
 #home .descri h3 {
   font-size: 1.375em;
   font-weight: 500;
+  line-height: 40px;
   margin-bottom: 10px;
 }
 
@@ -661,6 +662,7 @@ button {
 #sobre .sobre .bt-down {
   border: none;
   border-radius: 25px;
+  display: inline-block;
   background: #58BBF3;
   padding: 12px 20px;
   font-size: 1em;
@@ -671,9 +673,10 @@ button {
   transition: .3s linear;
 }
 
-#sobre .sobre .bt-down:after {
-  content: url(../../img/flecha.png);
-  margin-left: 5px;
+#sobre .sobre .bt-down img {
+  float: right;
+  margin-top: 2px;
+  margin-left: 8px;
 }
 
 #sobre .sobre .bt-down:hover {
@@ -809,124 +812,6 @@ button {
   color: #fff;
 }
 
-/*
-#habilidades{
-    &:before{
-        content: '';
-        display: block;
-        margin: 0 auto;
-        width: 40px;
-        position: relative;
-        height: 40px;
-        border-top: 40px solid rgba(196, 196, 196, 0.18);
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-    }
-    .container-grid{
-        padding-top: 60px;
-        padding-bottom: 60px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        @include d(s){
-            grid-template-columns: 1fr;
-        }
-        @include d(s2){
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .title{text-align: center;display: block;margin-bottom: 80px;}
-    .item{
-        box-shadow: none;
-        grid-template-columns: 1fr;
-        span, p{
-            font-weight: 500;
-        }
-    }
-    .tec{
-        
-        .content {
-            max-width: 100%;
-            position: relative;
-            display: grid;
-            justify-content: stretch;
-            grid-template-columns: 1fr 5fr;
-            background-color: #878787;
-            margin-bottom: 50px;
-            height: 5px;
-            @include d(m){
-                grid-template-columns: 2fr 5fr;
-            }
-          }
-          .content p{
-            background: #fff;
-            position: relative;
-            top: -5px;
-          }
-          .skills {
-            text-align: right;
-            height: 5px;
-            color: white;
-            
-          }
-          .content span{
-            position: absolute;
-            right: 0;
-            top: -7px;
-            padding-left: 10px;
-            background: #fff;
-          }
-          .html, .css, .jav, .php{
-              background-color: $cor-secundaria;
-          }
-          .html {width: 90%;}
-          .css {width: 80%;}
-          .jav {width: 65%; }
-          .php {width: 60%; }
-         
-    }
-    
-    .prof{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        text-align: center;
-        justify-content: stretch;
-        gap: 60px 0;
-        // @include d(s){
-        //     gap: 60px 0;
-        // }
-        .skills, .content{
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            position: relative;
-            background: none;
-            animation: .5s linear;
-            border: 5px solid #878787;
-        }
-        .skills{
-            border-color: $cor-secundaria transparent $cor-secundaria $cor-secundaria;
-            position: absolute;
-            top: -5px;
-            
-            left: -5px;
-        }
-        span{
-            position: absolute;
-            top: 45px;
-            left: 45px;
-            color: $cor-primaria;
-            text-align: center;
-        }
-        p{
-            position: relative;
-            bottom: -130px;
-        }
-    }
-}
-*/
 #formacao:before {
   content: '';
   display: block;
@@ -1066,7 +951,7 @@ button {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #portfolio .container-grid {
@@ -1096,6 +981,7 @@ button {
 
 #portfolio .item.hidden {
   height: 0;
+  padding: 0;
 }
 
 #portfolio .item, #portfolio .item.hidden.visible {
@@ -1173,4 +1059,114 @@ button {
 .btn-hidden:hover img {
   -webkit-filter: brightness(0%) invert(100%);
           filter: brightness(0%) invert(100%);
+}
+
+#contato {
+  padding: 60px 0;
+}
+
+#contato .title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#contato p {
+  font-size: 1.25em;
+  text-align: center;
+  font-weight: 400;
+  line-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contato p img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  width: 14px;
+  position: relative;
+  height: 14px;
+  bottom: -15px;
+  margin: 0 10px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+#contato a {
+  color: #58BBF3;
+}
+
+#contato .social-icons {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contato .social-icons a {
+  line-height: 36px;
+  font-weight: 400;
+}
+
+#contato .social-icons li + li {
+  margin-left: 100px;
+}
+
+@media screen and (max-width: 599px) {
+  #contato .social-icons li + li {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+
+#contato .social-icons img {
+  max-height: 38px;
+  float: left;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 599px) {
+  #contato .social-icons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+
+footer {
+  background: #FCFBFB;
+  padding: 60px 0;
+}
+
+footer .container {
+  position: relative;
+}
+
+footer p {
+  font-size: 1.125em;
+  font-weight: 400;
+  text-align: center;
+}
+
+footer .b-scroll {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  width: 20px;
+  -webkit-filter: brightness(0%);
+          filter: brightness(0%);
+}
+
+footer .b-scroll:hover {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }

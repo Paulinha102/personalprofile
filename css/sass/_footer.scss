@@ -1,0 +1,24 @@
+footer{
+    background: #FCFBFB;
+    padding: 60px 0;
+    .container{
+        position: relative;
+    }
+    p{
+        font-size: em(18);
+        font-weight: 400;
+        text-align: center;
+    }
+    .b-scroll{
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        width: 20px;
+        filter: brightness(0%);
+        &:hover{
+            filter: brightness(100%);
+        }
+    }
+    
+    
+}
