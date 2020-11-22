@@ -20,6 +20,9 @@ $fonte-2: 'Montserrat', sans-serif;
     @else if $size == 22{
         font-size: em(22);
     }
+    @else if $size == 26{
+        font-size: em(26);
+    }
     @else if $size == 48{
         font-size: em(48);
     }
@@ -32,6 +35,9 @@ $fonte-2: 'Montserrat', sans-serif;
     font-family: $fonte-2;
     @if $size == 32{
         font-size: em(32);
+    }
+    @else if $size == 24{
+        font-size: em(24);
     }
 }
 
