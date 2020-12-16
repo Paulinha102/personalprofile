@@ -1,0 +1,43 @@
+// Cores 
+$cor-primaria: #282828;
+$cor-secundaria: #58BBF3;
+
+// Fontes
+$fonte-1: 'Roboto', sans-serif;
+$fonte-2: 'Montserrat', sans-serif;
+
+//Tipografia
+@function em($pixel, $contexto: 16){
+    @return $pixel / $contexto + em;
+}
+@mixin tipo-1($size) {
+    @if $size == 14{
+        font-size: em(14);
+    }
+    @else if $size == 16{
+        font-size: em(16);
+    }
+    @else if $size == 22{
+        font-size: em(22);
+    }
+    @else if $size == 26{
+        font-size: em(26);
+    }
+    @else if $size == 48{
+        font-size: em(48);
+    }
+    @else if $size == 56{
+        font-size: em(56);
+    }
+}
+
+@mixin title($size) {
+    font-family: $fonte-2;
+    @if $size == 32{
+        font-size: em(32);
+    }
+    @else if $size == 24{
+        font-size: em(24);
+    }
+}
+
