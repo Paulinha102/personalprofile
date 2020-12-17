@@ -11,6 +11,7 @@ document.addEventListener( "DOMContentLoaded", function() {
         //fixed
         function fixedMenu(){
             let displayHeader = document.querySelector('header'); 
+<<<<<<< HEAD
             let secIntro = document.querySelector('#home');
             var navHeight = displayHeader.offsetHeight;
             
@@ -22,6 +23,15 @@ document.addEventListener( "DOMContentLoaded", function() {
             else {
                 displayHeader.classList.remove('fixed');
                 secIntro.style.marginTop = 0;
+=======
+            var navHeight = displayHeader.offsetHeight;
+            var navTop = window.scrollY;
+            if (navTop > navHeight) {
+                displayHeader.classList.add('fixed');
+            }
+            else {
+                displayHeader.classList.remove('fixed');
+>>>>>>> e3936ec1ebb1d446e3cbd019ea7e05d86930eb85
             }
         }
         window.addEventListener('scroll', fixedMenu);
